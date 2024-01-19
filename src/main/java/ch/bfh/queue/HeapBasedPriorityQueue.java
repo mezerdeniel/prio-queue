@@ -131,7 +131,7 @@ public class HeapBasedPriorityQueue<K, E> implements PriorityQueue<K, E> {
      * Helper method to sift up an element to its correct position, when the key is smaller than its parent.
      * @param i an int value with the index of the to be checked element.
      */
-    // Helper method to sift up an element to its correct position
+    // Helper method to "bubble" up an element to its correct position
     private void bubbleUp(int i) {
         while (i != 0 && comparator.compare(nodes[i].getKey(), nodes[getParent(i)].getKey()) < 0) {
             swap(i, getParent(i));
@@ -146,7 +146,7 @@ public class HeapBasedPriorityQueue<K, E> implements PriorityQueue<K, E> {
      *
      * @param i an int value with the index of the to be checked element.
      */
-    // Helper method to sift down an element to its correct position
+    // Helper method to "bubble" down an element to its correct position
     private void bubbleDown(int i) {
         int minChild;
         while (getLeftChild(i) < capacity) {
